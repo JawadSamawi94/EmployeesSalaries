@@ -6,22 +6,23 @@ namespace EmployeesSalaries.Models.Employee
     {
         public string FirstName { get; set; } = "Test";
         public string LastName { get; set; } = "Test";
-        public string Role { get; set; } = "Dev"; 
-        public IEmployee Manager { get; set; } = new LeadDev();
+        public IEmployee Supervisor { get; set; } = new LeadDev();
 
         public int Id { get; } = 4;
-        public bool IsMatch(int id) { return true; }
         public bool ReportsTo(int id) { return id >= Id; }
 
-        public IEmployee Assign(IEmployee manager) {
-            if (manager.Role == "LeadDev") 
+        public void Assign(IEmployee employeesSupervisor)
+        {
+            // this to check if the supervisor is the correct type (Dev reports to LeadDev)
+            string employeeType = employeesSupervisor.GetType().Name;
+            string supervisorType = Supervisor.GetType().Name;
+            if (employeeType == supervisorType)
             {
-                Manager = manager;
-                return this;
-            } 
+                Supervisor = employeesSupervisor;
+            }
             else
             {
-                throw new BadHttpRequestException($"Dev Reports to LeadDev and not to {manager.Role}");
+                throw new BadHttpRequestException($"Dev Reports to LeadDev and not to {employeeType}");
             }
         }
     }

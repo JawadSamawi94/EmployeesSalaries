@@ -5,7 +5,7 @@ namespace EmployeesSalaries.Services
 {
     public class EmployeeSalaryService : IEmployeeSalaryService
     {
-        List<IEmployeeSalaryCalculater> salaryCalculaters = new List<IEmployeeSalaryCalculater> { 
+        List<IEmployeeSalaryCalculater> salaryCalculaters = new List<IEmployeeSalaryCalculater> {
             new ManagerSalary(),
             new SalesSalary(),
             new LeadDevSalary(),
@@ -17,11 +17,10 @@ namespace EmployeesSalaries.Services
             IEmployeeSalaryCalculater calc = GetCalculater(employee);
             return calc.GetTotalSalary();
         }
-        private IEmployeeSalaryCalculater GetCalculater(IEmployee employee)
+        private IEmployeeSalaryCalculater GetCalculater(IEmployee employee) // gets the correct calculater from employee type
         {
-            IEmployeeSalaryCalculater calculater = salaryCalculaters.Find(calc => calc.IsMatch(employee.Role));
-            if (calculater == null) throw new Exception("Calculater Not Impelmented");
-            return calculater;
+            return salaryCalculaters
+                .Find(calc => calc.IsRequiredCalculater(employee.GetType().Name)) ?? new DevSalary();
         }
     }
 }

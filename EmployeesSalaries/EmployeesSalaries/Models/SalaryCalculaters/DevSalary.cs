@@ -7,6 +7,6 @@ namespace EmployeesSalaries.Models
         public double BasicSalary { get; set; } = 800;
 
         public double GetTotalSalary() { return BasicSalary; }
-        public bool IsMatch(string Role) { return Role == "Dev"; }
+        public bool IsRequiredCalculater(string Role) { return Role == "Dev"; }
     }
 }

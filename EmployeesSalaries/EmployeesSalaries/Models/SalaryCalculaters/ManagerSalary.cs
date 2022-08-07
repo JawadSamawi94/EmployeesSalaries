@@ -8,6 +8,6 @@ namespace EmployeesSalaries.Models
         public double Bouns { get; set; } = 500;
 
         public double GetTotalSalary() { return BasicSalary + Bouns; }
-        public bool IsMatch(string Role) { return Role == "Manager"; }
+        public bool IsRequiredCalculater(string Role) { return Role == "Manager"; }
     }
 }

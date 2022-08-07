@@ -2,8 +2,8 @@
 {
     public interface IReportsTo
     {
-        IEmployee Manager { get; }
-        IEmployee Assign(IEmployee manager);
+        IEmployee Supervisor { get; }
+        void Assign(IEmployee manager);
         bool ReportsTo(int id);
     }
 }

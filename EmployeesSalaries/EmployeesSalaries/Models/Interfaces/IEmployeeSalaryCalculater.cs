@@ -4,6 +4,6 @@
     {
         public double BasicSalary { get; set; }
         public double GetTotalSalary();
-        public bool IsMatch(string Role);
+        public bool IsRequiredCalculater(string Role);
     }
 }

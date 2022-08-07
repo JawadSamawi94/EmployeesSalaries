@@ -18,10 +18,7 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger(x => x.SerializeAsV2 = true);
-    app.UseSwaggerUI(c =>
-    {
-
-    });
+    app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();
