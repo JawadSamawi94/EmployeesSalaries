@@ -6,7 +6,7 @@ namespace EmployeesSalaries.Models.Employee
     {
         public string FirstName { get; set; } = "Test";
         public string LastName { get; set; } = "Test";
-        public IEmployee Supervisor { get; set; } = new LeadDev();
+        public IEmployee Supervisor { get; } = new LeadDev();
 
         public int Id { get; } = 4;
         public bool ReportsTo(int id) { return id >= Id; }

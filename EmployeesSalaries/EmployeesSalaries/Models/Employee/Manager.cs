@@ -6,7 +6,6 @@ namespace EmployeesSalaries.Models.Employee
     {
         public string FirstName { get; set; } = "Test";
         public string LastName { get; set; } = "Test";
-        public string Role { get; set; } = "Manager";
 
         public int Id { get; } = 0;
 
