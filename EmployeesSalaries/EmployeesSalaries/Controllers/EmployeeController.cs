@@ -28,11 +28,12 @@ namespace EmployeesSalaries.Controllers
         }
 
         [HttpPut("/assign/{employeeId}/{supervisorId}")]
-        public void AssignManager(int employeeId, int supervisorId)
+        public IEmployee AssignManager(int employeeId, int supervisorId)
         {
-            IReportsTo employee = _employeeService.GetEmployeeReportsTo(employeeId);
+            IEmployee employee = _employeeService.GetEmployee(employeeId);
             IEmployee employeeSupervisor = _employeeService.GetEmployee(supervisorId);
-            employee.Assign(employeeSupervisor);
+            employee.AssignSuperVisor(employeeSupervisor);
+            return employee;
         }
     }
 }

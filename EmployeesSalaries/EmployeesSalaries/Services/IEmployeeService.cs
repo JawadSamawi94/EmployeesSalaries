@@ -6,6 +6,5 @@ namespace EmployeesSalaries.Services
     {
         public IEmployee GetEmployee(int id);
         public List<IEmployee> GetEmployees();
-        public IReportsTo GetEmployeeReportsTo(int id);
     }
 }

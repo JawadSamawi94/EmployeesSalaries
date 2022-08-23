@@ -5,5 +5,6 @@
         string FirstName { get; set; }
         string LastName { get; set; }
         int Id { get; }
+        void AssignSuperVisor(IEmployee supervisor);
     }
 }
