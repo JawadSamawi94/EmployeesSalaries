@@ -7,7 +7,7 @@ namespace EmployeesSalaries.Models.Employee
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
-        public int Id { get; } = 0;
+        public int Id { get; set; }
 
     }
 }

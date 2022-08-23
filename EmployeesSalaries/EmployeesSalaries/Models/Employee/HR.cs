@@ -8,7 +8,7 @@ namespace EmployeesSalaries.Models.Employee
         public string LastName { get; set; }
         public IEmployee Supervisor { get; set; } = new Manager();
 
-        public int Id { get; } = 3;
+        public int Id { get; set; }
 
         public bool ReportsTo(int id) { return id == Id; }
         public void Assign(IEmployee employeesSupervisor)
