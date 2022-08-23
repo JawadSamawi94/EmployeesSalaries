@@ -4,6 +4,5 @@
     {
         public double BasicSalary { get; set; }
         public double GetNetSalary();
-        public bool IsRequiredCalculater(string Role);
     }
 }

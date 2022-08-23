@@ -4,12 +4,11 @@ namespace EmployeesSalaries.Models.Employee
 {
     public class Sales : IEmployee, IReportsTo
     {
+        public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public IEmployee Supervisor { get; set; } = new Manager();
-
-        public int Id { get; set; }
-        public bool ReportsTo(int id) { return id == Id; }
+        public IEmployeeSalaryCalculater SalaryCalc { get; } = new SalesSalary();
 
         public void AssignSuperVisor(IEmployee employeesSupervisor)
         {
