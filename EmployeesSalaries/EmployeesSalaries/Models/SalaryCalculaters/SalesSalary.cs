@@ -6,8 +6,9 @@ namespace EmployeesSalaries.Models
     {
         public double BasicSalary { get; set; } = 1000;
         public double Target { get; set; } = 1000;
+        public double Sales { get; set; } = 1500;
 
-        public double GetTotalSalary() { return BasicSalary + (Target * 0.15); }
+        public double GetNetSalary() { return BasicSalary + (Target <= Sales ? Sales * 0.15 : 0); }
         public bool IsRequiredCalculater(string Role) { return Role == "Sales"; }
     }
 }

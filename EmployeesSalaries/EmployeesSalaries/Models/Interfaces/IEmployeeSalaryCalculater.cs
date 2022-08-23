@@ -3,7 +3,7 @@
     public interface IEmployeeSalaryCalculater
     {
         public double BasicSalary { get; set; }
-        public double GetTotalSalary();
+        public double GetNetSalary();
         public bool IsRequiredCalculater(string Role);
     }
 }
