@@ -4,8 +4,8 @@ namespace EmployeesSalaries.Models.Employee
 {
     public class Manager : IEmployee
     {
-        public string FirstName { get; set; } = "Test";
-        public string LastName { get; set; } = "Test";
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
 
         public int Id { get; } = 0;
 

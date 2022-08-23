@@ -4,8 +4,8 @@ namespace EmployeesSalaries.Models.Employee
 {
     public class Dev : IEmployee, IReportsTo
     {
-        public string FirstName { get; set; } = "Test";
-        public string LastName { get; set; } = "Test";
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public IEmployee Supervisor { get; set; } = new LeadDev();
 
         public int Id { get; } = 4;
