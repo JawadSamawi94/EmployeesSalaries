@@ -13,17 +13,7 @@ namespace EmployeesSalaries.Models.Employee
 
         public void Assign(IEmployee employeesSupervisor)
         {
-            // this to check if the supervisor is the correct type (Dev reports to LeadDev)
-            string employeeType = employeesSupervisor.GetType().Name;
-            string supervisorType = Supervisor.GetType().Name;
-            if (employeeType == supervisorType)
-            {
-                Supervisor = employeesSupervisor;
-            }
-            else
-            {
-                throw new BadHttpRequestException($"Dev Reports to LeadDev and not to {employeeType}");
-            }
+            Supervisor = employeesSupervisor;
         }
     }
 }
