@@ -4,6 +4,6 @@ namespace EmployeesSalaries.Services
 {
     public interface IEmployeeSalaryService
     {
-        public double CalcSalary(IEmployee employee);
+        public decimal CalcSalary(IEmployee employee);
     }
 }

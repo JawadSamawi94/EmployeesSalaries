@@ -4,10 +4,16 @@ namespace EmployeesSalaries.Models
 {
     public class SalesSalary: IEmployeeSalaryCalculater
     {
-        public double BasicSalary { get; set; } = 1000;
-        public double Target { get; set; } = 1000;
-        public double Sales { get; set; } = 1500;
+        public decimal BasicSalary { get; set; }
+        public decimal Target { get; set; }
+        public decimal Sales { get; set; }
 
-        public double GetNetSalary() { return BasicSalary + (Target <= Sales ? Sales * 0.15 : 0); }
+        public decimal GetNetSalary() { return BasicSalary + (Target <= Sales ? ((Sales * 15) / 100) : 0); }
+        public SalesSalary(decimal salary, decimal target, decimal sales)
+        {
+            BasicSalary = salary;
+            Target = target;
+            Sales = sales;
+        }
     }
 }

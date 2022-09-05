@@ -4,8 +4,13 @@ namespace EmployeesSalaries.Models
 {
     public class DevSalary : IEmployeeSalaryCalculater
     {
-        public double BasicSalary { get; set; } = 800;
+        public decimal BasicSalary { get; set; }
 
-        public double GetNetSalary() { return BasicSalary; }
+        public decimal GetNetSalary() { return BasicSalary; }
+
+        public DevSalary(decimal salary)
+        {
+            BasicSalary = salary;
+        }
     }
 }

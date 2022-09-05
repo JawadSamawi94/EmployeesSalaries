@@ -17,7 +17,7 @@ namespace EmployeesSalaries.Controllers
             _salaryService = salaryService;
         }
         [HttpGet("{id}")]
-        public double Get(int id)
+        public decimal Get(int id)
         {
             IEmployee employee = _employeeService.GetEmployee(id);
 

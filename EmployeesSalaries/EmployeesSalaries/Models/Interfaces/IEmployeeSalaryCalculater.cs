@@ -2,7 +2,7 @@
 {
     public interface IEmployeeSalaryCalculater
     {
-        public double BasicSalary { get; set; }
-        public double GetNetSalary();
+        public decimal BasicSalary { get; set; }
+        public decimal GetNetSalary();
     }
 }

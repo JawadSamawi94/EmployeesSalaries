@@ -1,4 +1,5 @@
-﻿using EmployeesSalaries.Models.Employee;
+﻿using EmployeesSalaries.Models;
+using EmployeesSalaries.Models.Employee;
 using EmployeesSalaries.Models.Interfaces;
 
 namespace EmployeesSalaries.Data
@@ -10,13 +11,15 @@ namespace EmployeesSalaries.Data
             new Manager { 
                 FirstName = "Arnold",
                 Id = 0,
-                LastName = "Guardiola" 
+                LastName = "Guardiola",
+                SalaryCalc = new ManagerSalary(2100, 1000)
             },
 
             new Sales { 
                 FirstName = "Carlos",
                 Id = 1,
-                LastName = "Haney", 
+                LastName = "Haney",
+                SalaryCalc = new SalesSalary(1200, 1000, 1500),
                 Supervisor = new Manager { 
                     FirstName = "Arnold",
                     Id = 0,
@@ -27,7 +30,8 @@ namespace EmployeesSalaries.Data
             new Sales { 
                 FirstName = "David",
                 Id = 2,
-                LastName = "Silva", 
+                LastName = "Silva",
+                SalaryCalc = new SalesSalary(1500, 1000, 1500),
                 Supervisor = new Manager { 
                     FirstName = "Arnold",
                     Id = 0,
@@ -38,7 +42,8 @@ namespace EmployeesSalaries.Data
             new Sales { 
                 FirstName = "Sergio",
                 Id = 3,
-                LastName = "Ramos", 
+                LastName = "Ramos",
+                SalaryCalc = new SalesSalary(1300, 1000, 1500),
                 Supervisor = new Manager { 
                     FirstName = "Arnold",
                     Id = 0,
@@ -49,7 +54,8 @@ namespace EmployeesSalaries.Data
             new LeadDev { 
                 FirstName = "Leo",
                 Id = 4,
-                LastName = "Messi", 
+                LastName = "Messi",
+                SalaryCalc = new LeadDevSalary(1500),
                 Supervisor = new Manager { 
                     FirstName = "Arnold",
                     Id = 0,
@@ -60,7 +66,8 @@ namespace EmployeesSalaries.Data
             new LeadDev { 
                 FirstName = "Tamara",
                 Id = 5,
-                LastName = "Romero", 
+                LastName = "Romero",
+                SalaryCalc = new LeadDevSalary(1300),
                 Supervisor = new Manager { 
                     FirstName = "Arnold",
                     Id = 0,
@@ -71,7 +78,8 @@ namespace EmployeesSalaries.Data
             new HR { 
                 FirstName = "Kevin",
                 Id = 6,
-                LastName = "Debruyn", 
+                LastName = "Debruyn",
+                SalaryCalc = new HRSalary(1200),
                 Supervisor = new Manager { 
                     FirstName = "Arnold",
                     Id = 0,
@@ -82,7 +90,8 @@ namespace EmployeesSalaries.Data
             new HR { 
                 FirstName = "Christine",
                 Id = 7,
-                LastName = "Dejong", 
+                LastName = "Dejong",
+                SalaryCalc = new HRSalary(1500),
                 Supervisor = new Manager { 
                     FirstName = "Arnold",
                     Id = 0,
@@ -91,7 +100,8 @@ namespace EmployeesSalaries.Data
             new Dev { 
                 FirstName = "Andreas",
                 Id = 8,
-                LastName = "Misk", 
+                LastName = "Misk",
+                SalaryCalc = new DevSalary(1000),
                 Supervisor = new LeadDev { 
                     FirstName = "Leo",
                     Id = 4,
@@ -107,7 +117,8 @@ namespace EmployeesSalaries.Data
             new Dev { 
                 FirstName = "Thomas",
                 Id = 9,
-                LastName = "Gripe", 
+                LastName = "Gripe",
+                SalaryCalc = new DevSalary(850),
                 Supervisor = new LeadDev { 
                     FirstName = "Leo",
                     Id = 4,
@@ -123,7 +134,8 @@ namespace EmployeesSalaries.Data
             new Dev { 
                 FirstName = "Robert",
                 Id = 10,
-                LastName = "Franks", 
+                LastName = "Franks",
+                SalaryCalc = new DevSalary(900),
                 Supervisor = new LeadDev { 
                     FirstName = "Tamara",
                     Id = 5,
@@ -139,7 +151,8 @@ namespace EmployeesSalaries.Data
             new Dev { 
                 FirstName = "Roberto",
                 Id = 10,
-                LastName = "Manch", 
+                LastName = "Manch",
+                SalaryCalc = new DevSalary(800),
                 Supervisor = new LeadDev { 
                     FirstName = "Tamara",
                     Id = 5,

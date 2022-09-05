@@ -7,7 +7,7 @@ namespace EmployeesSalaries.Models.Employee
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public IEmployeeSalaryCalculater SalaryCalc { get; } = new ManagerSalary();
+        public IEmployeeSalaryCalculater SalaryCalc { get; set; }
 
         public void AssignSuperVisor(IEmployee employeesSupervisor)
         {
