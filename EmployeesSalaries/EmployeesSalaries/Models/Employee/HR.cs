@@ -2,16 +2,16 @@
 
 namespace EmployeesSalaries.Models.Employee
 {
-    public class HR : IEmployee, IReportsTo
+    public class HR : IEmployee, IReportsTo<Manager>
     {
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public IEmployee Supervisor { get; set; } = new Manager();
+        public Manager Supervisor { get; set; } = new Manager();
         public IEmployeeSalaryCalculater SalaryCalc { get; set; }
 
 
-        public void AssignSuperVisor(IEmployee employeesSupervisor)
+        public void AssignSuperVisor(Manager employeesSupervisor)
         {
              Supervisor = employeesSupervisor;
         }

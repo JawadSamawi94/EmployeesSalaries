@@ -1,7 +1,8 @@
 ﻿namespace EmployeesSalaries.Models.Interfaces
 {
-    public interface IReportsTo
+    public interface IReportsTo<T> where T : IEmployee
     {
-        IEmployee Supervisor { get; }
+        T Supervisor { get; }
+        void AssignSuperVisor(T supervisor);
     }
 }
